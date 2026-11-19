@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: intro-navigate
+  namespace: myapp
+spec:
+  to:
+    kind: Service
+    name: intro-navigate
+  port:
+    targetPort: http
+  tls:
+    termination: edge

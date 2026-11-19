@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: intro-navigate
+  namespace: myapp
+  labels:
+    app: intro-navigate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: intro-navigate
+  template:
+    metadata:
+      labels:
+        app: intro-navigate
+    spec:
+      containers:
+        - name: intro-navigate
+          image: image-registry.openshift-image-registry.svc:5000/myapp/intro-navigate:latest
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8081
+              protocol: TCP
