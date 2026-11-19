@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: intro-navigate
-          image: image-registry.openshift-image-registry.svc:5000/myapp/intro-navigate:latest
+          image: image-registry.openshift-image-registry.svc:5000/myapp/intro-navigate@sha256:b5635cbadad2dcb940876def902ded388090a9d66369e40379ae745e948a8b3a
           imagePullPolicy: Always
           ports:
             - name: http
